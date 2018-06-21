@@ -15,10 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FeedPage {
 
+  public objeto_feed = {
+        titulo:'Rodrigo Viturino',
+        data:"November 5, 1955",
+        descricao:"Aprendendo a desenvolver com Ionic 3",
+        qntd_likes: 12,
+        qntd_comments: 4,
+        time_comment: '11h ago'
+  }
+
+  // Criando variavel
   public nome_usuario:string = "Rodrigo Viturino";
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+      public navCtrl: NavController, 
+      public navParams: NavParams) {
   }
 
   public somaDoisNumeros(num1:number,num2:number ): void{

@@ -13,23 +13,30 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content padding>
 
     <ion-slides pager>
 
         <ion-slide class="slide_image">
           <img src="../../assets/imgs/slide-01.png" alt="">
-          <h2>Slide 1</h2>
+          <h2>Novas App 2018 !</h2>
+          <div>
+              <p>Este novo app terá funções de controlar o ambiente da sua casa. Foi feito para você !</p>
+              <p>Ficou curioso? <strong> Veja mais.</strong></p>
+          </div>
         </ion-slide>
       
         <ion-slide class="slide_image">
           <img src="../../assets/imgs/slide-02.png" alt="">
-          <h2>Slide 2</h2>
+          <h2>Faça pagamentos de um jeito simples</h2>
+          <p>Com o leitor de códigos de barras, é só usar a câmera do seu celular para pagar as contas em poucos passos.</p>
         </ion-slide>
       
         <ion-slide class="slide_image">
           <img src="../../assets/imgs/slide-03.png" alt="">
-          <h2>Slide 3</h2>
+          <h2>Contrate produtos</h2>
+          <p>Coloque suas contas em dia ou faça seu dinheiro render com nossas opções de produtos.Logo na tela inicial você visualiza as principais informações que precisa.</p>
+          <a (click)="goToTabsPage()">Acesse a Home</a>
         </ion-slide>
       
       </ion-slides>
