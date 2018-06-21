@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { MoovieProvider } from '../../providers/moovie/moovie';
+
 /**
  * Generated class for the FeedPage page.
  *
@@ -8,19 +10,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
+ // INCLUINDO A CLASSE
 @IonicPage()
 @Component({
   selector: 'page-feed',
   templateUrl: 'feed.html',
+  providers: [
+      MoovieProvider
+  ]
 })
+
 export class FeedPage {
 
   public objeto_feed = {
         titulo:'Rodrigo Viturino',
         data:"November 5, 1955",
         descricao:"Aprendendo a desenvolver com Ionic 3",
-        qntd_likes: 12,
-        qntd_comments: 4,
+        qntd_likes: 890,
+        qntd_comments: 955,
         time_comment: '11h ago'
   }
 
@@ -30,14 +37,24 @@ export class FeedPage {
 
   constructor(
       public navCtrl: NavController, 
-      public navParams: NavParams) {
+      public navParams: NavParams,
+      private movieProvider: MoovieProvider
+      ) {
   }
 
   public somaDoisNumeros(num1:number,num2:number ): void{
       // alert(num1 + num2);
   }
 
+  // Quando a API der resposta, vai cair aqui
   ionViewDidLoad() {
+    //console.log('ionViewDidLoad FeedPage');
+    this.movieProvider.getLatesMovies().subscribe(
+          data=>{
+            console.log(data);
+          }, error => {
+            console.log(error);
+          });
     // this.somaDoisNumeros(10, 400);
   }
 
