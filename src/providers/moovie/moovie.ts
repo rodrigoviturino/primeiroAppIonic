@@ -11,14 +11,14 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class MoovieProvider {
 
-  private baseApiPath = "http://api.salaovip.com.br/salao/66/galeria";
+  private baseApiPath = "https://api.themoviedb.org/3/movie/popular?";
 
   constructor(public http: Http) {
     console.log('Hello MoovieProvider Provider');
   }
 
   getLatesMovies(){
-    return this.http.get(this.baseApiPath);
+    return this.http.get(this.baseApiPath + "api_key=2424e34d203a504119b2921348a8a368");
   }
 
 }

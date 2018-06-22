@@ -56,9 +56,9 @@ export class FeedPage {
             const response = (data as any);
             const objeto_retorno = JSON.parse(response._body);
 
-              // retorno de lista de filme do RESULTS
-            //this.lista_filmes = objeto_retorno.results;
-            this.lista_filmes = objeto_retorno.data.gallery;
+            // retorno de lista de filme do RESULTS
+            this.lista_filmes = objeto_retorno.results;
+            
 
             console.log(objeto_retorno);
           }, error => {
