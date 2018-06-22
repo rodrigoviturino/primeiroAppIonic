@@ -32,6 +32,8 @@ export class FeedPage {
   }
 
   // Criando variavel
+  public lista_filmes = new Array<any>();
+
   public nome_usuario:string = "Rodrigo Viturino";
   
 
@@ -50,11 +52,18 @@ export class FeedPage {
   ionViewDidLoad() {
     //console.log('ionViewDidLoad FeedPage');
     this.movieProvider.getLatesMovies().subscribe(
-          data=>{
-            console.log(data);
+          data => {
+            const response = (data as any);
+            const objeto_retorno = JSON.parse(response._body);
+
+              // retorno de lista de filme do RESULTS
+            //this.lista_filmes = objeto_retorno.results;
+            this.lista_filmes = objeto_retorno.data.gallery;
+
+            console.log(objeto_retorno);
           }, error => {
             console.log(error);
-          });
+          })
     // this.somaDoisNumeros(10, 400);
   }
 
